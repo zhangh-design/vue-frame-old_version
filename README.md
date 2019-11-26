@@ -1,10 +1,7 @@
 # vue-frame-old_version
 vue基于element使用render函数重构的一套框架，还有axios模块化接口、动态路由等插件，此框架已经是老版本并且并未进行npm分包处理，新版本请查看vue-frame
 
-
-# vue-develop-template
-
-> vue
+> vue、elementUI
 
 ## Build Setup
 
