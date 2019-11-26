@@ -1,9 +1,0 @@
-申请	apply
-负责人审批	superior
-经营部审批	charge
-财务部审批	finance
-总经理审批	manager
-采购	dispose
-出纳打款	teller
-入库	archive
-发票归档	confirm
