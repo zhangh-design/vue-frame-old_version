@@ -1,0 +1,335 @@
+
+/**
+ * 员工入职申请 api 文档接口 领域模型
+ */
+export default [
+    {
+        name: 'readApplyPage',
+        method: 'GET',
+        desc: '获取员工信息管理-分页',
+        path: '/hr/entry/apply/page',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+            page_page: 0,
+            page_size: 30
+        },
+        validator:{
+            page_page: {required: true,type: Number,sqlxss: true,not: '', msg: 'page_page不能为空!'},
+            page_size: {required: true,type: Number,sqlxss: true,not: '', msg: 'page_size不能为空!'}
+        }
+    },
+    {
+        name: 'getApplyDetail',
+        method: 'GET',
+        desc: '获取申请详情',
+        path: '/hr/entry/apply/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            processid: ''
+        }
+    },
+    {
+        name: 'getDetail',
+        method: 'GET',
+        desc: '获取申请详情',
+        path: '/hr/entry/apply/pay/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            processid: ''
+        }
+    },
+    {
+        name: 'doStep',
+        method: 'GET',
+        desc: '流程步骤',
+        path: '/hr/entry/apply/{processid}/step',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            processid: '',
+        }
+    },
+    {
+        name: 'readUserFilePage',
+        method: 'GET',
+        desc: '获取得简历附件列表',
+        path: '/hr/entry/apply/{processid}/accessor/page',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            processid: '',
+            page_page: 0,
+            page_size: 30
+        }
+    },
+    {
+        name: 'deleteUserFile',
+        method: 'DELETE',
+        desc: '删除',
+        path: '/hr/entry/apply/{processid}/accessor',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            processid: '',
+            name: ''
+        }
+    },
+    {
+        name: 'insertApply',
+        method: 'POST',
+        desc: '新增',
+        path: '/hr/entry/apply/',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+            code: '',
+            name:'',
+            sex: '',
+            logincode:'',
+            birthday: '',
+            address: '',
+            idcard: '',
+            phone:'',
+            begintime: '',
+            station: '',
+            stationlevel: '',
+            deptcode: '',
+            deptname:'',
+            linkman: '',
+            linkphone: '',
+            status: '',
+            married: '',
+            profession:'',
+            education:'',
+            politics:'',
+            hkaddress:'',
+            bank:'',
+            account:'',
+            region:'',
+            doorcode:'',
+        }
+    },
+    {
+        name: 'doSaveApplyDetail',
+        method: 'POST',
+        desc: '保存',
+        path: '/hr/entry/apply/detail/{processid}/{id}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            processid: '',
+            token: '',
+            id: '',
+            personid:'',
+            personname:'',
+            socialbase:'',
+            basepay:'',
+            meritpay:'',
+            commsub:'',
+            trafficsub:'',
+            homesub:'',
+            otherpay:'',
+            homepay:'',
+            socialpay:'',
+            otherpay:'',
+            nohome:'',
+            nosocial:'',
+            changedtime:'',
+            reason:'',
+            remark:'',
+            dirty: true,
+        }
+    },
+    {
+        name: 'doSaveApply',
+        method: 'POST',
+        desc: '保存',
+        path: '/hr/entry/apply/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            processid: '',
+            token: '',
+            id: '',
+            // code: '',
+            name:'',
+            logincode:'',
+            payid:'',
+            sex: '',
+            birthday: '',
+            address: '',
+            idcard: '',
+            phone:'',
+            begintime: '',
+            station: '',
+            stationlevel: '',
+            deptcode: '',
+            deptname:'',
+            linkman: '',
+            linkphone: '',
+            status: '',
+            married: '',
+            profession:'',
+            education:'',
+            politics:'',
+            hkaddress:'',
+            bank:'',
+            account:'',
+            region:'',
+            doorcode:'',
+            dirty: true,
+        }
+    },
+    {
+        name: 'doSubmitApply',
+        method: 'POST',
+        desc: '提交',
+        path: '/hr/entry/apply/{personid}/submit',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            token: '',
+            personid:'',
+            processid: '',
+            advice: '',
+        }
+    },
+    {
+        name: 'deleteApply',
+        method: 'DELETE',
+        desc: '删除',
+        path: '/hr/entry/apply/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            processid: '',
+            token: ''
+        }
+    },
+    {
+        name: 'readSex',
+        method: 'GET',
+        desc: '读取性别列表',
+        path: '/root/dict/sex',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+        }
+    },
+    {
+        name: 'readDept',
+        method: 'GET',
+        desc: '读取部门列表',
+        path: '/root/dept/list',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+        }
+    },
+    {
+        name: 'readStatus',
+        method: 'GET',
+        desc: '读取状态列表',
+        path: '/root/dict/personstatus',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+        }
+    },
+    {
+        name: 'readMarried',
+        method: 'GET',
+        desc: '读取婚姻状态列表',
+        path: '/root/dict/married',
+        mockPath: '',
+        headers: ['token'],
+        params: {
+            token: '',
+        }
+    },
+    {
+        name: 'addDetail',
+        method: 'POST',
+        desc: '包信息-新增',
+        path: '/hr/entry/apply/pay/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            processid: '',
+            token: '',
+            personid:'',
+            personname:'',
+            socialbase:'',
+            basepay:'',
+            meritpay:'',
+            commsub:'',
+            trafficsub:'',
+            homesub:'',
+            otherpay:'',
+            homepay:'',
+            socialpay:'',
+            otherpay:'',
+            nohome:'',
+            nosocial:'',
+            changedtime:'',
+            reason:'',
+            remark:'',
+        }
+    },
+    {
+        name: 'updateDetail',
+        method: 'POST',
+        desc: '包信息-修改',
+        path: '/hr/entry/apply/pay/{processid}',
+        mockPath: '',
+        restful: true,
+        headers: ['token'],
+        params: {
+            processid: '',
+            token: '',
+            id: '',
+            personid:'',
+            personname:'',
+            socialbase:'',
+            basepay:'',
+            meritpay:'',
+            commsub:'',
+            trafficsub:'',
+            homesub:'',
+            otherpay:'',
+            homepay:'',
+            socialpay:'',
+            otherpay:'',
+            nohome:'',
+            nosocial:'',
+            changedtime:'',
+            reason:'',
+            remark:'',
+            pid:'',
+            dirty: true
+        }
+    },
+]
