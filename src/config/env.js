@@ -15,7 +15,7 @@ let isServer = false
 
 if (process.env.NODE_ENV == 'development') {
     imgBaseUrl = '/img/'
-    baseUrl = 'http://192.168.1.93:8082/oa/'
+    baseUrl = 'http://127.0.0.1:8082/oa/'
     // baseUrl = 'back/oa'
     default_root_url = ''
     isServer = false
